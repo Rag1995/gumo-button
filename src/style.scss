@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  // daisyui issue:
+  // https://github.com/saadeghi/daisyui/issues/2859
+  html:has(.drawer .drawer-toggle:checked) {
+    scrollbar-gutter: auto;
+  }
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
