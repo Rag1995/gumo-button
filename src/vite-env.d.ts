@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-pages/client" />
+declare module 'vue3-marquee';
 
 import type { GlobalComponents } from 'vue'
 declare global {

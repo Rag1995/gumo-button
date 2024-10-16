@@ -7,8 +7,20 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppFooter: typeof import('./components/AppFooter.vue')['default']
+    AppHeader: typeof import('./components/AppHeader.vue')['default']
+    AppNavbar: typeof import('./components/AppNavbar.vue')['default']
+    AudioBtn: typeof import('./components/AudioBtn.vue')['default']
+    AudioDetailCard: typeof import('./components/AudioDetailCard.vue')['default']
+    AudioList: typeof import('./components/AudioList.vue')['default']
+    AudioListContainer: typeof import('./components/AudioListContainer.vue')['default']
+    AudioLoader: typeof import('./components/AudioLoader.vue')['default']
+    AudioPlayingIndicator: typeof import('./components/AudioPlayingIndicator.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    PlayAudioBtn: typeof import('./components/PlayAudioBtn.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ThemeControl: typeof import('./components/ThemeControl.vue')['default']
+    VolumeControl: typeof import('./components/VolumeControl.vue')['default']
   }
 }

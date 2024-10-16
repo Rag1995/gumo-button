@@ -27,6 +27,7 @@ export default defineConfig(({ mode }) => {
         imports: [
           'vue',
           'vue-router',
+          '@vueuse/core',
           'pinia',
           {
             from: 'vue-router',
@@ -36,6 +37,9 @@ export default defineConfig(({ mode }) => {
         ],
       }),
     ],
+    server: {
+      port: 5177,
+    },
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),

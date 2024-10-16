@@ -8,13 +8,36 @@ export default {
     './index.html',
     './src/**/*.{vue,js,ts,jsx,tsx}',
   ],
-  daisyui: ['light', 'dark'],
+  theme: {
+    container: {
+      center: true,
+      padding: { DEFAULT: '1rem' },
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '850px',
+        'xl': '960px',
+        '2xl': '1280px',
+      },
+    },
+    extend: {
+      fontFamily: {
+        jp: ['"Kosugi Maru"', 'sans-serif'],
+      },
+      container: {
+        center: true,
+      },
+    },
+  },
+  daisyui: ['night'],
   plugins: [
     require('daisyui'),
     iconsPlugin({
       scale: 1.5,
-      collections: getIconCollections([]),
+      collections: getIconCollections(['solar', 'ri']),
     }),
+    require('@tailwindcss/typography'),
+    require('tailwind-animatecss'),
     plugin(({ addVariant }) => {
       addVariant('current', '&.current')
       addVariant('active', '&.router-link-active')
@@ -28,6 +51,28 @@ export default {
         },
         '.ltr': {
           direction: 'ltr',
+        },
+      })
+    }),
+
+    plugin(({ addComponents, addUtilities }) => {
+      addComponents({
+        '.btn-yt': {
+          '@apply bg-red-600 text-white font-bold': {},
+          '@apply hover:bg-red-700': {},
+        },
+        '.btn-x': {
+          '@apply bg-stone-700 text-white font-bold': {},
+          '@apply hover:bg-stone-800': {},
+        },
+      })
+
+      addUtilities({
+        '.animate-infinite': {
+          animationIterationCount: 'infinite',
+        },
+        '.animate-once': {
+          animationIterationCount: '1',
         },
       })
     }),

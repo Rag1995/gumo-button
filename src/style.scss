@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+@font-face {
+	font-family: 'HunInn';
+	src: url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.eot); /* IE9 Compat Modes */
+	src: url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.eot?#iefix) format("embedded-opentype"), /* IE6-IE8 */
+	url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.woff) format("woff"), /* Modern Browsers */
+	url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.ttf) format("truetype"), /* Safari, Android, iOS */
+	url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.svg#SealmemoryHeader) format("svg"); /* Legacy iOS */
+}
+@import 'animate.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,9 +19,38 @@
   html:has(.drawer .drawer-toggle:checked) {
     scrollbar-gutter: auto;
   }
+  h1 { @apply text-4xl font-bold mb-4; }
+  h2 { @apply text-3xl font-semibold mb-3; }
+  h3 { @apply text-2xl font-semibold mb-2; }
+  h4 { @apply text-xl font-medium mb-2; }
+  h5 { @apply text-lg font-medium mb-1; }
+  p { @apply text-base font-normal mb-2; }
+  hr { @apply border-t border-base-content/50 opacity-50 my-4; }
+}
+
+:root {
+  font-family: HunInn, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html {
+  @apply bg-[url('/assets/img/bg-blur.jpg')] bg-cover bg-center bg-fixed bg-no-repeat;
+}
+
+html, body {
+  @apply w-screen min-h-screen m-0 p-0 overflow-x-hidden;
 }
 
 input::-ms-reveal,
 input::-ms-clear {
   display: none;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.35s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to, .fade-leave-from {
+  opacity: 1;
 }
