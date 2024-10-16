@@ -13,7 +13,7 @@ export default {
       center: true,
       padding: { DEFAULT: '1rem' },
       screens: {
-        'sm': '640px',
+        'sm': '100%',
         'md': '768px',
         'lg': '850px',
         'xl': '960px',

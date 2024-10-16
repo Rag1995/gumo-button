@@ -4,9 +4,9 @@
 <template>
   <header class="bg-base-200">
     <div class="container py-4">
-      <div class="flex flex-row items-center justify-start">
+      <div class="flex flex-row flex-wrap items-center justify-start gap-4">
         <!-- Brand -->
-        <div class="text-4xl font-black">
+        <div class="text-nowrap text-4xl font-black">
           ⚗<span class="font-jp">ぐもボタン</span>☁
         </div>
 

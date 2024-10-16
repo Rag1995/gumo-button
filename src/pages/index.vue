@@ -31,7 +31,7 @@ const filteredAudioList = computed(() => {
 
 <template>
   <div class="container pt-4">
-    <div class="card mb-4 bg-base-100">
+    <div class="card bg-base-100">
       <div class="card-body">
         <h3 class="flex flex-row items-center gap-2">
           這個是什麼？
@@ -52,7 +52,7 @@ const filteredAudioList = computed(() => {
           </div>
           <div class="grow">
             <h2>渡雲／わたぐも</h2>
-            <div class="flex flex-row gap-1">
+            <div class="flex flex-row flex-wrap gap-1">
               <a
                 href="https://www.youtube.com/@watagumo_hyena"
                 target="_blank"
@@ -76,32 +76,34 @@ const filteredAudioList = computed(() => {
       </div>
     </div>
 
-    <div class="mb-4 flex flex-row flex-wrap items-center justify-start gap-2">
-      <label class="input input-bordered flex max-w-sm items-center gap-2">
-        <input
-          v-model.trim="search"
-          type="text"
-          class="grow"
-          placeholder="尋找美妙鬣狗的聲音"
-        >
-        <i class="i-ri-search-line" />
-      </label>
+    <div class="pb-12 pt-4">
+      <div class="mb-4 flex flex-row flex-wrap items-center justify-start gap-2">
+        <label class="input input-bordered flex max-w-sm items-center gap-2">
+          <input
+            v-model.trim="search"
+            type="text"
+            class="grow"
+            placeholder="尋找美妙鬣狗的聲音"
+          >
+          <i class="i-ri-search-line" />
+        </label>
 
 
-      <label class="btn" :class="{ 'btn-warning': onlyFavorite }">
-        <input
-          v-model="onlyFavorite"
-          type="checkbox"
-          class="fixed size-0 appearance-none opacity-0"
-        >
-        <i v-if="onlyFavorite" class="i-solar-star-bold" />
-        <i v-else class="i-solar-star-linear " />
-        顯示最愛
-      </label>
-    </div>
+        <label class="btn" :class="{ 'btn-warning': onlyFavorite }">
+          <input
+            v-model="onlyFavorite"
+            type="checkbox"
+            class="fixed size-0 appearance-none opacity-0"
+          >
+          <i v-if="onlyFavorite" class="i-solar-star-bold" />
+          <i v-else class="i-solar-star-linear " />
+          顯示最愛
+        </label>
+      </div>
 
-    <div class="min-h-screen">
-      <AudioListContainer :audio-list="filteredAudioList" />
+      <div class="min-h-screen">
+        <AudioListContainer :audio-list="filteredAudioList" />
+      </div>
     </div>
   </div>
 </template>
